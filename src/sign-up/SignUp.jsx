@@ -1,5 +1,8 @@
 import { useState } from "react"
 import './sign-up.css';
+import { LoginBtn } from "./Loginbtn";
+import { Link } from "react-router";
+
 
 export const Signup = () => {
 
@@ -27,12 +30,12 @@ export const Signup = () => {
 
     return(
         <>
-        <form onSubmit={handleSubmitButton} className="main-form" >
-            <div className="flex flex-col main-div">
-                <h1>Sign-up</h1>
+        <form  className="main-form flex flex-col" >
+            <div onSubmit={handleSubmitButton} className="flex flex-col">
+                <h1>Sign up</h1>
                 <p>Please fill in this form to create account</p>
 
-                <div className="flex flex-col form-div">
+                <div className="flex flex-col">
                 <label htmlFor="firstName">
                     <b>First Name</b>
                 </label>
@@ -88,9 +91,9 @@ export const Signup = () => {
                 onChange={handleInputChange}
                 />
                 </div>
-
                 <button className="btn-grad" onClick={handleSubmitButton}>Sign-in</button>
                 </div>
+             <Link to="/Login"/><LoginBtn/><Link/>
         </form>
         </>      
     )
